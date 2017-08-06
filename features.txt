@@ -2,13 +2,18 @@
 
 Will do:
 
-github repo
-heroku e-mail
-heroku app
+
+
+reqp/py/reqp.py
+tkrlist.txt
 
 
 Done:
 
 Started README.md
 Started features.txt
-
+github repo
+heroku app
+Install Anaconda
+mkdir -p ~reqp/csv/history/
+reqp/bin/reqp.bash
