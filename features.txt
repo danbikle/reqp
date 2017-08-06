@@ -5,7 +5,6 @@ Will do:
 
 
 reqp/py/reqp.py
-tkrlist.txt
 
 
 Done:
@@ -17,3 +16,4 @@ heroku app
 Install Anaconda
 mkdir -p ~reqp/csv/history/
 reqp/bin/reqp.bash
+tkrlist.txt
