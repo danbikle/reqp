@@ -1,0 +1,14 @@
+~/reqp/features.txt
+
+Will do:
+
+github repo
+heroku e-mail
+heroku app
+
+
+Done:
+
+Started README.md
+Started features.txt
+
