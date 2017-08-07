@@ -4,7 +4,7 @@ reqp.py
 This script should request prices.
 
 Demo:
-/home/reqp/anaconda3/bin/python /home/reqp/reqp/py/reqp.py
+/home/reqp/anaconda3/bin/python /home/reqp/reqp/py/reqp.py /home/reqp/reqp/tkrlist.txt
 """
 
 import datetime
@@ -14,6 +14,14 @@ import requests
 import sys
 import time
 import pdb
+
+if (len(sys.argv) != 2):
+  print('You should give the name of a file full of tickers.')
+  print('Demo:')
+  print('/home/reqp/anaconda3/bin/python /home/reqp/reqp/py/reqp.py /home/reqp/reqp/tkrlist.txt')
+  sys.exit(1)
+    
+tkrs_s = sys.argv[1]
 
 # I should ensure the output folders exist
 outdirh = '/home/reqp/html/'
@@ -37,7 +45,7 @@ params_s     = '?period1=-631123200&period2='+nowutime_s+'&interval=1d&events='
 # I get csv from URL like this:
 # https://query1.finance.yahoo.com/v7/finance/download/AA?period1=1492462308&period2=1495054308&interval=1d&events=history&crumb=pYheK5rafih
 
-with open('/home/reqp/reqp/tkrlist.txt') as fh:
+with open(tkrs_s) as fh:
   tkrlist_s   = fh.read()
   tkrlist_l   = tkrlist_s.split()
   for tkr in tkrlist_l:
@@ -51,14 +59,17 @@ with open('/home/reqp/reqp/tkrlist.txt') as fh:
       pattern_ma = re.search(pattern_re, html_s)
       crumb_s    = pattern_ma[2].replace('"','') # erase " on end of crumb
       for type_s in csv_types_l:
-        csvurl_s   = ycsv_s+tkr+params_s+type_s+'&crumb='+crumb_s
+        csvurl_s = ycsv_s+tkr+params_s+type_s+'&crumb='+crumb_s
         # yahoo server needs time to remember the cookie-crumb-pair it just served:
         time.sleep(5)
-        csv_r      = ssn.get(csvurl_s)
-        csv_s      = csv_r.content.decode("utf-8")
+        csv_r        = ssn.get(csvurl_s)
+        csv_s        = csv_r.content.decode("utf-8")
         csv_status_i = csv_r.status_code
-        # I should write the csv_s to csv file:
-        with open('/home/reqp/csv/'+type_s+'/'+tkr+'.csv','w') as fh:
-          fh.write(csv_s)
-        
+        if (csv_status_i == 200) :
+          # I should write the csv_s to csv file:
+          with open('/home/reqp/csv/'+type_s+'/'+tkr+'.csv','w') as fh:
+            fh.write(csv_s)
+            print('wrote: ', csv_s)
+        else:
+          print(tkr, type_s, 'status not 200 for some reason')
 'bye'

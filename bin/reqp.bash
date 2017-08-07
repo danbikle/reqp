@@ -8,7 +8,7 @@
 
 echo $0 busy
 date
-/home/reqp/anaconda3/bin/python /home/reqp/reqp/py/reqp.py
+/home/reqp/anaconda3/bin/python /home/reqp/reqp/py/reqp.py /home/reqp/reqp/tkrlist.txt
 date
 
 exit
