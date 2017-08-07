@@ -11,7 +11,7 @@ date
 /home/reqp/anaconda3/bin/python /home/reqp/reqp/py/reqp.py /home/reqp/reqp/tkrlist.txt
 
 # I should copy the prices to a folder which helps me serve them.
-rsync -av /home/reqp/csv /home/reqp/reqp/static/csv
+rsync -av /home/reqp/csv /home/reqp/reqp/static/
 date
 
 exit
