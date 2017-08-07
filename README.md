@@ -28,6 +28,10 @@ Steps to install this repo are listed below:
 
 * bash Anaconda3-4.4.0-Linux-x86_64.sh
 
+* echo 'export PATH=${HOME}/anaconda3/bin:$PATH' >> ~reqp/.bashrc
+
+* bash
+
 * I should clone the reqp repo:
 
 * cd ~reqp
@@ -50,7 +54,23 @@ Steps to install this repo are listed below:
 
 * I should install heroku CLI
 
+* cd ~reqp/
+
+* wget https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz -O heroku.tar.gz
+
+* tar -xvzf heroku.tar.gz
+
+* ln -s heroku-cli*linux-x64 heroku
+
+* echo 'export PATH=${HOME}/heroku/bin:$PATH' >> ~reqp/.bashrc
+
 * I should deploy reqp to heroku
+
+* cd ~reqp/reqp
+
+* heroku create
+
+* git push heroku master
 
 Questions?
 
