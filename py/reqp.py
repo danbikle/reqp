@@ -37,7 +37,6 @@ user_agent_s = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like 
 headers_d    = {'User-Agent': user_agent_s}
 ycsv_s       = 'https://query1.finance.yahoo.com/v7/finance/download/'
 nowutime_s   = datetime.datetime.now().strftime("%s")
-history_s    = '?period1=-631123200&period2='+nowutime_s+'&interval=1d&events=history&crumb='
 params_s     = '?period1=-631123200&period2='+nowutime_s+'&interval=1d&events='
 
 # I should use tkrlist.txt drive a loop
@@ -67,9 +66,10 @@ with open(tkrs_s) as fh:
         csv_status_i = csv_r.status_code
         if (csv_status_i == 200) :
           # I should write the csv_s to csv file:
-          with open('/home/reqp/csv/'+type_s+'/'+tkr+'.csv','w') as fh:
-            fh.write(csv_s)
-            print('wrote: ', csv_s)
+          csvf_s = '/home/reqp/csv/'+type_s+'/'+tkr+'.csv'
+          with open( csvf_s,'w') as fh:
+            fh.write(csvf_s)
+            print('wrote: ', csvf_s)
         else:
           print(tkr, type_s, 'status not 200 for some reason')
 'bye'
