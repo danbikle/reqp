@@ -1,7 +1,10 @@
 """
 fflask.py
+
+This script should help me run a flask server on my laptop.
+
 Demo:
-/home/reqp/anaconda3/bin/python /home/reqp/reqp/py/fflask.py
+/home/reqp/anaconda3/bin/python /home/reqp/reqp/fflask.py
 """
 import os
 from   flask import Flask
