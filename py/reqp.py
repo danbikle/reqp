@@ -68,7 +68,7 @@ with open(tkrs_s) as fh:
           # I should write the csv_s to csv file:
           csvf_s = '/home/reqp/csv/'+type_s+'/'+tkr+'.csv'
           with open( csvf_s,'w') as fh:
-            fh.write(csvf_s)
+            fh.write(csv_s)
             print('wrote: ', csvf_s)
         else:
           print(tkr, type_s, 'status not 200 for some reason')

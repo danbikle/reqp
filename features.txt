@@ -2,9 +2,12 @@
 
 Will do:
 
-
-
-reqp/py/reqp.py
+create a flask server
+Procfile
+requirements.txt
+runtime.txt
+README installation instructions
+README operation    instructions
 
 
 Done:
@@ -17,3 +20,5 @@ Install Anaconda
 mkdir -p ~reqp/csv/history/
 reqp/bin/reqp.bash
 tkrlist.txt
+
+started reqp/py/reqp.py
