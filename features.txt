@@ -2,7 +2,6 @@
 
 Will do:
 
-create a flask server
 Procfile
 requirements.txt
 runtime.txt
@@ -22,3 +21,4 @@ reqp/bin/reqp.bash
 tkrlist.txt
 
 started reqp/py/reqp.py
+create a flask server
