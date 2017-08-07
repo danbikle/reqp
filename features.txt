@@ -2,12 +2,9 @@
 
 Will do:
 
-Procfile
-requirements.txt
-runtime.txt
 README installation instructions
 README operation    instructions
-
+crontab.txt
 
 Done:
 
@@ -22,3 +19,7 @@ tkrlist.txt
 
 started reqp/py/reqp.py
 create a flask server
+
+Procfile
+requirements.txt
+runtime.txt
