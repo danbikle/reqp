@@ -23,6 +23,10 @@ sudo passwd reqp
 
 * I should login as reqp
 
+```
+su -l reqp
+```
+
 * I should install Anaconda with shell commands:
 
 ```
