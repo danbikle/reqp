@@ -50,7 +50,7 @@ with open(tkrs_s) as fh:
   for tkr in tkrlist_l:
     history_s = yahoo_s+tkr+'/history?p='+tkr
     with requests.Session() as ssn:
-      tkr_r   = ssn.get(history_s)
+      tkr_r   = ssn.get(history_s,headers=headers_d)
       html_s  = tkr_r.content.decode("utf-8")
       with open(outdirh+tkr+'.html','w') as fh:
         fh.write(html_s)
@@ -61,7 +61,7 @@ with open(tkrs_s) as fh:
         csvurl_s = ycsv_s+tkr+params_s+type_s+'&crumb='+crumb_s
         # yahoo server needs time to remember the cookie-crumb-pair it just served:
         time.sleep(5)
-        csv_r        = ssn.get(csvurl_s)
+        csv_r        = ssn.get(csvurl_s,headers=headers_d)
         csv_s        = csv_r.content.decode("utf-8")
         csv_status_i = csv_r.status_code
         if (csv_status_i == 200) :
