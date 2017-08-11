@@ -55,7 +55,9 @@ cd ~reqp/reqp
 
 * Above command should start a server which then 'locks' my shell.
 
-* I should leave that shell alone and open another shell:
+* I should leave that shell alone and open another shell.
+
+* I should try a curl command:
 
 ```
 curl localhost:5047/static/csv/history/FB.csv > /tmp/FB.csv
